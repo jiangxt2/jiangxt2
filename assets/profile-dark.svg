@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
+  <title id="title">StormSpirit — building multimodal data lake infrastructure</title>
+  <desc id="desc">Text, image, audio, video, and table data converge into a governed data lake for analytics and AI, with work across Pista, Tributo, Gravitino, Daft, and Ray.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="headline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#60A5FA"/>
+      <stop offset="0.52" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="route" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A78BFA"/>
+      <stop offset="0.45" stop-color="#60A5FA"/>
+      <stop offset="0.74" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#60A5FA" stop-opacity="0.16"/>
+      <stop offset="0.55" stop-color="#A78BFA" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="frame">
+      <rect width="1200" height="260" rx="24"/>
+    </clipPath>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .route-flow { stroke-dasharray: 2 14; animation: route-flow 18s linear infinite; }
+      @keyframes route-flow { to { stroke-dashoffset: -192; } }
+      @media (prefers-reduced-motion: reduce) {
+        .route-flow { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="260" rx="24" fill="url(#background)"/>
+  <circle cx="940" cy="130" r="285" fill="url(#halo)" clip-path="url(#frame)"/>
+
+  <g fill="none" stroke="#334155" opacity="0.24">
+    <circle cx="940" cy="130" r="62"/>
+    <circle cx="940" cy="130" r="94"/>
+  </g>
+
+  <circle cx="52" cy="39" r="4" fill="#34D399"/>
+  <text x="66" y="44" fill="#94A3B8" font-size="12" font-weight="650" letter-spacing="2">STORMSPIRIT / JIANGXT2</text>
+
+  <text x="52" y="103" fill="#F8FAFC" font-size="35" font-weight="720" letter-spacing="-1">Building multimodal</text>
+  <text x="52" y="148" fill="url(#headline)" font-size="39" font-weight="760" letter-spacing="-1.2">data lake infrastructure.</text>
+  <text x="54" y="183" fill="#94A3B8" font-size="15">From governed ingestion to distributed analytics and AI delivery.</text>
+
+  <text x="54" y="226" fill="#94A3B8" font-size="11" font-weight="650" letter-spacing="1.7">PROJECTS</text>
+  <text x="137" y="226" fill="#F8FAFC" font-size="13" font-weight="600">Pista · Tributo · Gravitino · Daft · Ray</text>
+
+  <g fill="none" stroke="#334155" stroke-width="1.5" opacity="0.7">
+    <path d="M 716 48 C 800 48 838 96 904 119"/>
+    <path d="M 688 88 C 790 88 838 112 904 125"/>
+    <path d="M 678 130 C 785 130 837 130 904 130"/>
+    <path d="M 688 172 C 790 172 838 148 904 135"/>
+    <path d="M 716 212 C 800 212 838 164 904 141"/>
+    <path d="M 976 116 C 1026 91 1063 78 1103 78"/>
+    <path d="M 976 144 C 1026 169 1063 182 1103 182"/>
+  </g>
+  <g class="route-flow" fill="none" stroke="url(#route)" stroke-linecap="round" stroke-width="2.5" opacity="0.9">
+    <path d="M 716 48 C 800 48 838 96 904 119"/>
+    <path d="M 688 88 C 790 88 838 112 904 125"/>
+    <path d="M 678 130 C 785 130 837 130 904 130"/>
+    <path d="M 688 172 C 790 172 838 148 904 135"/>
+    <path d="M 716 212 C 800 212 838 164 904 141"/>
+    <path d="M 976 116 C 1026 91 1063 78 1103 78"/>
+    <path d="M 976 144 C 1026 169 1063 182 1103 182"/>
+  </g>
+
+  <g fill="#111827" stroke-width="2">
+    <circle cx="716" cy="48" r="6" stroke="#A78BFA"/>
+    <circle cx="688" cy="88" r="6" stroke="#60A5FA"/>
+    <circle cx="678" cy="130" r="6" stroke="#22D3EE"/>
+    <circle cx="688" cy="172" r="6" stroke="#34D399"/>
+    <circle cx="716" cy="212" r="6" stroke="#A78BFA"/>
+  </g>
+  <g fill="#94A3B8" font-size="9" font-weight="700" letter-spacing="1.2" text-anchor="end">
+    <text x="701" y="51">TEXT</text>
+    <text x="673" y="91">IMAGE</text>
+    <text x="663" y="133">AUDIO</text>
+    <text x="673" y="175">VIDEO</text>
+    <text x="701" y="215">TABLE</text>
+  </g>
+
+  <circle cx="940" cy="130" r="38" fill="#111827" stroke="url(#route)" stroke-width="2.5"/>
+  <circle cx="940" cy="130" r="27" fill="none" stroke="#334155"/>
+  <circle cx="940" cy="130" r="4" fill="#22D3EE" filter="url(#glow)"/>
+  <text x="940" y="115" text-anchor="middle" fill="#94A3B8" font-size="9" font-weight="700" letter-spacing="1.3">DATA</text>
+  <text x="940" y="154" text-anchor="middle" fill="#F8FAFC" font-size="11" font-weight="700" letter-spacing="1.1">LAKE</text>
+
+  <circle cx="1103" cy="78" r="8" fill="#111827" stroke="#60A5FA" stroke-width="2"/>
+  <circle cx="1103" cy="182" r="8" fill="#111827" stroke="#34D399" stroke-width="2"/>
+  <text x="1120" y="82" fill="#94A3B8" font-size="9" font-weight="700" letter-spacing="1.1">ANALYTICS</text>
+  <text x="1120" y="186" fill="#94A3B8" font-size="9" font-weight="700" letter-spacing="1.1">AI / ML</text>
+
+  <text x="1148" y="226" text-anchor="end" fill="#94A3B8" font-size="11">github.com/jiangxt2</text>
+</svg>
