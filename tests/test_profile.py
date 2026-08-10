@@ -33,7 +33,13 @@ class ProfileAssetTest(unittest.TestCase):
                 self.assertNotIn("https://", content)
                 self.assertIn("prefers-reduced-motion", content)
                 self.assertIn("StormSpirit", content)
-                self.assertIn("multimodal data lake infrastructure", content)
+                self.assertIn("Multimodal LakeHouse infrastructure", content)
+                self.assertIn(
+                    "Governed multimodal data for distributed analytics and AI delivery.",
+                    content,
+                )
+                self.assertIn(">LAKE</text>", content)
+                self.assertIn(">HOUSE</text>", content)
                 for project in ("Pista", "Tributo", "Gravitino", "Daft", "Ray"):
                     self.assertIn(project, content)
                 for modality in ("TEXT", "IMAGE", "AUDIO", "VIDEO", "TABLE"):
@@ -50,7 +56,7 @@ class ProfileAssetTest(unittest.TestCase):
     def test_readme_is_intentionally_image_only(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("<picture>", readme)
-        self.assertIn("multimodal data lake infrastructure", readme)
+        self.assertIn("Multimodal LakeHouse infrastructure", readme)
         self.assertNotIn("###", readme)
         self.assertNotIn("<details>", readme)
         self.assertNotIn("mailto:", readme)

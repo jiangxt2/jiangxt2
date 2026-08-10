@@ -60,8 +60,8 @@ def render_svg(theme: Theme) -> str:
     """Render a deterministic, standalone SVG for *theme*."""
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260" role="img" aria-labelledby="title desc">
-  <title id="title">StormSpirit — building multimodal data lake infrastructure</title>
-  <desc id="desc">Text, image, audio, video, and table data converge into a governed data lake for analytics and AI, with work across Pista, Tributo, Gravitino, Daft, and Ray.</desc>
+  <title id="title">StormSpirit — Building Multimodal LakeHouse infrastructure</title>
+  <desc id="desc">Text, image, audio, video, and table data converge into a governed LakeHouse for distributed analytics and AI delivery, with work across Pista, Tributo, Gravitino, Daft, and Ray.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="{theme.background}"/>
@@ -114,9 +114,9 @@ def render_svg(theme: Theme) -> str:
   <circle cx="52" cy="39" r="4" fill="{theme.green}"/>
   <text x="66" y="44" fill="{theme.muted}" font-size="12" font-weight="650" letter-spacing="2">STORMSPIRIT / JIANGXT2</text>
 
-  <text x="52" y="103" fill="{theme.text}" font-size="35" font-weight="720" letter-spacing="-1">Building multimodal</text>
-  <text x="52" y="148" fill="url(#headline)" font-size="39" font-weight="760" letter-spacing="-1.2">data lake infrastructure.</text>
-  <text x="54" y="183" fill="{theme.muted}" font-size="15">From governed ingestion to distributed analytics and AI delivery.</text>
+  <text x="52" y="103" fill="{theme.text}" font-size="35" font-weight="720" letter-spacing="-1">Building Multimodal</text>
+  <text x="52" y="148" fill="url(#headline)" font-size="39" font-weight="760" letter-spacing="-1.2">LakeHouse infrastructure.</text>
+  <text x="54" y="183" fill="{theme.muted}" font-size="15">Governed multimodal data for distributed analytics and AI delivery.</text>
 
   <text x="54" y="226" fill="{theme.muted}" font-size="11" font-weight="650" letter-spacing="1.7">PROJECTS</text>
   <text x="137" y="226" fill="{theme.text}" font-size="13" font-weight="600">Pista · Tributo · Gravitino · Daft · Ray</text>
@@ -158,8 +158,8 @@ def render_svg(theme: Theme) -> str:
   <circle cx="940" cy="130" r="38" fill="{theme.background_alt}" stroke="url(#route)" stroke-width="2.5"/>
   <circle cx="940" cy="130" r="27" fill="none" stroke="{theme.line}"/>
   <circle cx="940" cy="130" r="4" fill="{theme.cyan}" filter="url(#glow)"/>
-  <text x="940" y="115" text-anchor="middle" fill="{theme.muted}" font-size="9" font-weight="700" letter-spacing="1.3">DATA</text>
-  <text x="940" y="154" text-anchor="middle" fill="{theme.text}" font-size="11" font-weight="700" letter-spacing="1.1">LAKE</text>
+  <text x="940" y="115" text-anchor="middle" fill="{theme.muted}" font-size="9" font-weight="700" letter-spacing="1.3">LAKE</text>
+  <text x="940" y="154" text-anchor="middle" fill="{theme.text}" font-size="11" font-weight="700" letter-spacing="1.1">HOUSE</text>
 
   <circle cx="1103" cy="78" r="8" fill="{theme.background_alt}" stroke="{theme.blue}" stroke-width="2"/>
   <circle cx="1103" cy="182" r="8" fill="{theme.background_alt}" stroke="{theme.green}" stroke-width="2"/>
