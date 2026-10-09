@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" role="img" aria-labelledby="title desc">
+  <title id="title">Thunderkeg / jiangxt2 — Distributed data and AI infrastructure</title>
+  <desc id="desc">Distributed analytics, data connectivity, and model delivery with Spark, Ray, Daft, Gravitino, and OLAP systems.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#11232B"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#39D0D8"/>
+      <stop offset="1" stop-color="#69D9A9"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#39D0D8" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#39D0D8" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="frame"><rect width="600" height="420" rx="20"/></clipPath>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    </style>
+  </defs>
+  <rect x="0.5" y="0.5" width="599" height="419" rx="20" fill="url(#background)" stroke="#2A3B48"/>
+  <circle cx="520" cy="60" r="210" fill="url(#halo)" clip-path="url(#frame)"/>
+  <circle cx="42" cy="48" r="5" fill="#69D9A9"/>
+  <text x="58" y="55" fill="#9DAEBB" font-size="26" font-weight="600" letter-spacing="1.5">THUNDERKEG / JIANGXT2</text>
+  <text x="40" y="135" fill="#E6EDF3" font-size="48" font-weight="700" letter-spacing="-1.5">Distributed data.</text>
+  <text x="40" y="198" fill="url(#accent)" font-size="48" font-weight="700" letter-spacing="-1.5">AI infrastructure.</text>
+  <path d="M 42 242 H 556" stroke="#2A3B48"/>
+  <text x="42" y="287" fill="#9DAEBB" font-size="26">Distributed analytics.</text>
+  <text x="42" y="326" fill="#9DAEBB" font-size="26">From data to model delivery.</text>
+  <text x="42" y="382" fill="#E6EDF3" font-size="26" font-weight="500">Spark · Ray · Daft · Gravitino · OLAP</text>
+</svg>
