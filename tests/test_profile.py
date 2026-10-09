@@ -2,12 +2,12 @@
 
 from __future__ import annotations
 
+import re
 import sys
 import unittest
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
 from pathlib import Path
-
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSET_BASE = "https://raw.githubusercontent.com/jiangxt2/jiangxt2/master/assets/"
@@ -68,7 +68,7 @@ class ProfileAssetTest(unittest.TestCase):
                     )
                     self.assertFalse(any("href" in name for name in element.attrib))
 
-    def test_readme_references_existing_theme_assets(self) -> None:
+    def test_readme_references_existing_assets(self) -> None:
         parser = ReadmeImages()
         parser.feed((ROOT / "README.md").read_text(encoding="utf-8"))
         referenced = set()
@@ -79,17 +79,22 @@ class ProfileAssetTest(unittest.TestCase):
             self.assertTrue((ROOT / "assets" / name).is_file(), name)
             referenced.add(name)
         self.assertEqual(
-            {path.name for path in (ROOT / "assets").glob("*.svg")}
-            | {"wechat-official-account.jpg"},
+            {
+                "profile-dark.svg",
+                "profile-light.svg",
+                "profile-mobile-dark.svg",
+                "profile-mobile-light.svg",
+                "wechat-official-account.jpg",
+            },
             referenced,
         )
-        self.assertEqual(6, len(parser.images))
+        self.assertEqual(2, len(parser.images))
         for attributes in parser.images:
             self.assertGreater(len(attributes.get("alt", "")), 30)
         for attributes in parser.sources:
             self.assertIn("prefers-color-scheme:", attributes["media"])
 
-    def test_readme_has_narrow_screen_banner_and_wrapping_cards(self) -> None:
+    def test_readme_has_narrow_screen_banner_and_qr(self) -> None:
         parser = ReadmeImages()
         parser.feed((ROOT / "README.md").read_text(encoding="utf-8"))
         for theme in ("light", "dark"):
@@ -102,40 +107,37 @@ class ProfileAssetTest(unittest.TestCase):
                 )
             )
         self.assertEqual("100%", parser.images[0]["width"])
-        for attributes in parser.images[1:5]:
-            self.assertEqual("400", attributes["width"])
         self.assertEqual("180", parser.images[-1]["width"])
         self.assertEqual("180", parser.images[-1]["height"])
         self.assertTrue(
             parser.images[-1]["src"].endswith("/wechat-official-account.jpg")
         )
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertNotIn('width="49%"', readme)
-        self.assertNotIn("<table", readme)
+        self.assertNotIn("project-", readme)
 
-    def test_readme_contains_profile_content_and_truthful_contribution_labels(
-        self,
-    ) -> None:
+    def test_readme_sections_and_community_contribution_scope(self) -> None:
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        for heading in (
-            "About me",
-            "Selected projects",
-            "Open-source contributions",
-            "Focus & stack",
-            "Let's connect",
-        ):
-            self.assertIn(f"## {heading}", readme)
+        self.assertEqual(
+            ["About me", "Focus & stack", "Open-source contributions", "Let's connect"],
+            re.findall(r"^## (.+)$", readme, re.MULTILINE),
+        )
+        self.assertEqual(
+            ["Apache Spark", "Apache Gravitino", "Ray", "Daft"],
+            re.findall(r"^### (.+)$", readme, re.MULTILINE),
+        )
         self.assertIn("Thunderkeg", readme)
         self.assertNotIn("StormSpirit", readme)
-        self.assertIn("community-maintained", readme)
-        spark_row = next(
-            line for line in readme.splitlines() if "/apache/spark/pull/58066" in line
-        )
-        self.assertIn("**Merged**", spark_row)
-        self.assertNotIn("Open PR", spark_row)
-        for function in ("bitmap_and", "bitmap_or", "bitmap_andnot", "bitmap_xor"):
-            self.assertIn(f"`{function}`", spark_row)
-        self.assertIn("https://jiangxt2.github.io/", readme)
+        self.assertNotIn("Selected projects", readme)
+        self.assertNotIn("status checked", readme)
+        self.assertNotIn("October 9, 2026", readme)
+        self.assertNotIn("Selected contributions merged upstream", readme)
+        self.assertNotIn("Merged example:", readme)
+        self.assertNotRegex(readme, r"<a\s")
+        self.assertNotRegex(readme, r"\[[^\]]+\]\(https?://")
+        ray_section = readme.split("### Ray\n", 1)[1].split("### Daft\n", 1)[0]
+        self.assertIn("Ray Data", ray_section)
+        for other_scope in ("Ray Train", "Ray Jobs", "Ray Serve"):
+            self.assertNotIn(other_scope, ray_section)
 
     def test_repository_contains_no_obvious_secret_markers(self) -> None:
         markers = ("github_pat_", "ghp_", "AKIA", "password=", "token=")
